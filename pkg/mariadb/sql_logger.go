@@ -12,8 +12,8 @@ package mariadb
 
 import (
 	"fmt"
+	"github.com/jianghaibo12138/TMZ/pkg/tmz_logger"
 	"github.com/sirupsen/logrus"
-	"stp_go/universal/stp_logger"
 )
 
 type SQLLogger struct {
@@ -28,7 +28,7 @@ func (s *SQLLogger) Printf(format string, v ...interface{}) {
 	s.logger.Debug(logStr)
 }
 func NewSQLLogger() *SQLLogger {
-	log := stp_logger.InitLogrus("sql", false)
+	log := tmz_logger.InitLogrus("sql", false)
 	return &SQLLogger{
 		logger: log,
 	}

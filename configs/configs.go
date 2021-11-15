@@ -28,15 +28,15 @@ func init() {
 
 func GetHomePath() string {
 	if runtime.GOOS == "windows" {
-		return "..\\.."
+		return ".\\"
 	} else {
-		return "../.."
+		return "./"
 	}
 }
 
 func AppConfig() {
 	homePath := GetHomePath()
-	yamlPath := path.Join(homePath, "configs", "env.conf.yml")
+	yamlPath := path.Join(homePath, "configs", "dev.conf.yml")
 	if !tools.IsFile(yamlPath) {
 		yamlPath = path.Join(homePath, "configs", "conf.yml")
 	}
