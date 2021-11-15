@@ -1,3 +1,3 @@
-module jianghaibo12138/TMZ
+module github.com/jianghaibo12138/TMZ
 
 go 1.17
