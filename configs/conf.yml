@@ -6,3 +6,5 @@ mysql:
   database: tmz
   debug: true
   flavor: mariadb
+  listen_tables:
+    - tmz_trigger

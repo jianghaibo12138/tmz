@@ -46,7 +46,7 @@ func binLogConn() (*canal.Canal, error) {
 	cfg.Flavor = configs.Settings.Mysql.Flavor
 	cfg.Dump.ExecutionPath = ""
 	cfg.Dump.TableDB = configs.Settings.Mysql.Database
-	cfg.Dump.Tables = []string{"im_Stock_Info"}
+	cfg.Dump.Tables = configs.Settings.Mysql.ListenTables
 	return canal.NewCanal(cfg)
 }
 
@@ -58,5 +58,6 @@ func logPosParser() *LogPos {
 		logger.Debug(fmt.Sprintf("[logPosParser] scan MASTER STATUS err: %s", result.Error.Error()))
 		return nil
 	}
+	logger.Debug(fmt.Sprintf("[logPosParser] scan MASTER STATUS success, pos: %+v", pos))
 	return &pos
 }

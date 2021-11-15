@@ -10,13 +10,14 @@ import (
 
 type YamlSetting struct {
 	Mysql struct {
-		Host     string `yaml:"host"`
-		Port     int16  `yaml:"port"`
-		User     string `yaml:"user"`
-		Password string `yaml:"password"`
-		Database string `yaml:"database"`
-		Debug    bool   `yaml:"debug"`
-		Flavor   string `yaml:"flavor"`
+		Host         string   `yaml:"host"`
+		Port         int16    `yaml:"port"`
+		User         string   `yaml:"user"`
+		Password     string   `yaml:"password"`
+		Database     string   `yaml:"database"`
+		Debug        bool     `yaml:"debug"`
+		Flavor       string   `yaml:"flavor"`
+		ListenTables []string `yaml:"listen_tables"`
 	}
 }
 
