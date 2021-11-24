@@ -16,3 +16,4 @@
 .idea
 configs/dev.conf.yml
 logs
+bin
